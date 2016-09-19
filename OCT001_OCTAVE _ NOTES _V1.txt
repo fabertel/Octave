@@ -1,0 +1,82 @@
+OCTAVE _ NOTES _V1
+
+1==2 %false
+1 ~= 0 %not equal
+1 || 0 & OR
+1 %% 0 &AND
+v = 1:.5:6
+v = 1:5
+rand(3,3)
+help eye %documentazione 
+size(A)
+length(v)
+--------------
+MATRICI 
+ones(2,3)
+W = zeros(1,3)
+rand(3,3)
+randn(3) --> distribuzione normale
+eye(5) %matrice identita 
+A(2,:) %tutta seconda riga 
+A(:,2) %tutta seconda colonna
+A([1:2],:) %tutta 1ma+2nda riga 
+A(:,2)=[10,11;12] %aggiorna dati in na colonna 
+A = [A, [100;101;102]] %aggiunge colonna in fondo
+A(:) &da matrice a vettore
+C= [A B] %concatenazione orizz di 2 matrici 
+C= [A;B] %concatenazione vertic  di 2 matrici 
+ magic(3) &quadratomagio
+ max( A,[],1) %max per colonna 
+max( A,[],2) %max per riga 
+max(A(:))
+sum(A,1) o sum(A,2) %somma per riga o colonna 
+sum(sum(A .* eye(9))) %somma diagonale
+sum(sum(A .* flipud(eye(9))))
+ A*pinv(A) = identita -- pinv + matrice inversa 
+ --------------
+OPERAZIONE MATRICI 
+A*B
+A .*B   %moltiplicazione diretta
+1 ./A %matrice inversa
+A' %traspostaA*A'
+A< 3 %elementi minori di 3 in matrice - posizioni
+find(A<3) %elementi minori di 3 in matrice - valori
+sum(A)
+prod(A)
+floor/ceil (A) %approx
+--------------
+FILE 
+pwd %current directory 
+ls &dir
+who
+whos
+clear &pulirememoria
+>> save fab.txt vv -ascii
+>> laod (fab.txt)
+--------------
+PLOT
+y1 = sin(2*pi*4*T)
+plot(T,y1)
+y2= cos(2*pi*4*T);
+plot(T,y2)
+hold on %mantiene grafico attivo x sovrascrivere altro plot
+plot(T,y1,r,)
+plot(T,y1,'r');
+xlabel('time')
+ylabel('value')
+legend('sin','cos')
+title('titolo')
+print -dpng 'myplot.png'
+close
+subplot(1,2,1) o subplot(1,2,2) % 2 grafii in stessa finrestra 
+figure(1);plot(T,y1) %apre 2 fienstre independenti
+figure(2);plot(T,y2)
+axis ([0.2 0.8 -0.5 0.5])
+imagesc(A) --> grafico di amtrice 
+imagesc(A), colorbar, colormap gray
+A=1,A=2 %concatenare comandi con feedback . ";" senza feedback 
+--------------
+Control Statements: for, while, if statement
+
+
+

@@ -1,0 +1,39 @@
+// CODICE PER CALCOLARE COSTO IPOTESi
+
+
+function J = computeCost(X, y, theta)
+m = length(y);
+J = 0;
+for i = 1:m,
+    h = theta(1) + theta(2) * X(i)
+    a = h - y(i);
+    b = a^2;
+    J = J + b;
+    end;
+J = J * (1 / (2 * m));
+end
+
+ESEMPIO 
+>> computeCost ([0;1;2;3],[4;7;7;8],[2;2])
+h =  2
+h =  4
+h =  6
+h =  8
+ans =  1.7500
+>>
+
+
+// CALCOLO THETA  
+>> X = [1,2104,5,1,45;1,1416,3,2,40;1,1536,3,2,30;1,852,2,1,36]
+>> Y = [460;232;315;178]
+>> THETA = pinv(X'*X)*X'*Y
+THETA =
+   185.81850
+     0.38818
+   -57.07385
+   -93.29085
+    -3.64187
+>>
+
+SUBMISSION CODE - GYhc6KR6HEUMdnOF
+GYhc6KR6HEUMdnOF
